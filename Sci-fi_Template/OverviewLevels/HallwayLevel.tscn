@@ -1,27 +1,350 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=4]
+
+[sub_resource type="Environment" id=1]
+fog_enabled = true
+fog_color = Color( 0.713726, 0.823529, 0.929412, 1 )
+fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
+fog_depth_end = 492.8
+fog_depth_curve = 0.241484
+fog_transmit_curve = 0.307786
+fog_height_enabled = true
+fog_height_curve = 0.615572
+glow_enabled = true
+
+[sub_resource type="GIProbeData" id=2]
+bounds = AABB( -13.1898, -3.4745, -15.4569, 26.3796, 6.949, 30.9138 )
+cell_size = 0.241514
+to_cell_xform = Transform( 4.14055, 0, 0, 0, 4.14055, 0, 0, 0, 4.14055, 54.6129, 14.3863, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 0, 1094713344, 1094713344, 0, 127295728, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
 
 [node name="HallwayLevel" type="Spatial"]
 
-[node name="Hallway" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.121472 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.16204, 0, 0.986784, 0, 1, 0, -0.986784, 0, 0.16204, 7.68229, 1.17962, 7.29715 )
+walk_speed = 4
+running_speed = 6
 
-[node name="Hallway2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.87853 )
+[node name="Assets" type="Spatial" parent="."]
+editor/display_folded = true
 
-[node name="Hallway3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.87853 )
+[node name="Hallway" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, -0.105636 )
 
-[node name="Hallway5" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.41505, 0, 7.3547 )
+[node name="Hallway19" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, -0.105636 )
 
-[node name="Hallway6" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.50255, 0, 7.3547 )
+[node name="Hallway22" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1352, -0.0135226, 10.8804 )
 
-[node name="Hallway4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.82883 )
+[node name="Hallway9" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1136, -0.0145736, 1.83358 )
 
-[node name="X-Hallway" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000898719, 0.0348032, 7.30013 )
+[node name="Hallway10" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1136, -0.0145736, -0.151458 )
+
+[node name="Hallway17" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -8.88238e-08, 0, 2.03205, 0, 1, 0, -1, 0, -4.37114e-08, -7.58604, -0.0145736, -3.61177 )
+
+[node name="Hallway11" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.59807, -0.016234, 7.36589 )
+
+[node name="Hallway15" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.6, -0.016, 7.366 )
+
+[node name="Hallway16" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.6, -0.016, 7.366 )
+
+[node name="Hallway25" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -9.09856e-08, 0, 2.08151, 0, 1, 0, -1, 0, -4.37114e-08, 3.56317, -0.016, 20.3123 )
+
+[node name="Hallway12" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.64041, -0.020234, 7.36589 )
+
+[node name="Hallway13" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.6, -0.02, 7.366 )
+
+[node name="Hallway14" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.6, -0.02, 7.366 )
+
+[node name="Hallway2" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, 1.89437 )
+
+[node name="Hallway20" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1352, -0.0135226, 12.8804 )
+
+[node name="Hallway3" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, 3.89437 )
+
+[node name="Hallway18" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, 3.89437 )
+
+[node name="Hallway21" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1352, -0.0135226, 14.8804 )
+
+[node name="Hallway4" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.0213369, 8.81979 )
+
+[node name="Hallway8" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.0213369, 14.8 )
+
+[node name="Hallway5" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.0213369, 10.7998 )
+
+[node name="Hallway6" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.021, 12.8 )
+
+[node name="Hallway7" parent="Assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.021, 14.8 )
+
+[node name="X-Hallway" parent="Assets" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128971, -0.0625373, 7.35864 )
+
+[node name="Hallway_Corner" parent="Assets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00564935, 0, -2.07302 )
+
+[node name="Hallway_Corner4" parent="Assets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00564935, 0, -2.07302 )
+
+[node name="Hallway_Corner5" parent="Assets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1198, 0, 8.91303 )
+
+[node name="Hallway_Corner7" parent="Assets" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.59245, 0, 20.2863 )
+
+[node name="Hallway_Corner3" parent="Assets" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.56115, 0, -3.59427 )
+
+[node name="Hallway_Corner2" parent="Assets" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.0924, 0, 5.82091 )
+
+[node name="Hallway_Corner6" parent="Assets" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0474548, 0, 18.7672 )
+
+[node name="Lighting" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04669, 1.32539, 7.66462 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight2" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 7.66462 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight11" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 12.6655 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight12" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 16.2164 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight13" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.713883, 1.32539, 19.6835 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight14" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61106, 1.32539, 19.6835 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight15" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09273, 1.32539, 19.6835 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight16" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8545, 1.32539, 17.8121 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight17" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8545, 1.32539, 13.7198 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight18" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8545, 1.32539, 10.6214 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight19" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.688, 1.32539, 8.33524 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight3" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54618, 1.32539, 7.66462 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight4" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48079, 1.32539, 7.66462 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight5" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2818, 1.39937, 6.21983 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight6" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.319, 1.39937, 2.4061 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight7" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.319, 1.39937, -2.14042 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight8" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86906, 1.39937, -3.61204 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight9" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06772, 1.39937, -3.61204 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="OmniLight10" type="OmniLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23078, 1.39937, 1.78049 )
+light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_energy = 0.5
+light_indirect_energy = 3.5
+light_specular = 0.39
+shadow_enabled = true
+shadow_contact = 2.0
+omni_range = 2.6
+omni_attenuation = 2.0
+
+[node name="GIProbe" type="GIProbe" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.22406 )
+extents = Vector3( 13.1898, 3.4745, 15.4569 )
+data = SubResource( 2 )
