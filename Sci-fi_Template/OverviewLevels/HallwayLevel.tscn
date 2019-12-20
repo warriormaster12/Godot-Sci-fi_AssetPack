@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Hallways/StructureFrame.dae" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Hallways/Floor.dae" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0.294118, 0.290196, 0.290196, 1 )
 fog_enabled = true
 fog_color = Color( 0.713726, 0.823529, 0.929412, 1 )
 fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
@@ -14,13 +18,16 @@ fog_depth_curve = 0.241484
 fog_transmit_curve = 0.307786
 fog_height_enabled = true
 fog_height_curve = 0.615572
+tonemap_mode = 2
+tonemap_exposure = 0.96
+tonemap_white = 1.58
 glow_enabled = true
 
 [sub_resource type="GIProbeData" id=2]
-bounds = AABB( -13.1898, -3.4745, -15.4569, 26.3796, 6.949, 30.9138 )
-cell_size = 0.241514
-to_cell_xform = Transform( 4.14055, 0, 0, 0, 4.14055, 0, 0, 0, 4.14055, 54.6129, 14.3863, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 0, 1094713344, 1094713344, 0, 127295728, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -18.6319, -3.4745, -22.6169, 37.2639, 6.949, 45.2337 )
+cell_size = 0.353389
+to_cell_xform = Transform( 2.82975, 0, 0, 0, 2.82975, 0, 0, 0, 2.82975, 52.7236, 9.83195, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 313586336, 0, 0, 0, 1065353216, 1065353216, 1065353216, 1065353216, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -29,12 +36,12 @@ propagation = 0.7
 [node name="HallwayLevel" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.16204, 0, 0.986784, 0, 1, 0, -0.986784, 0, 0.16204, 7.68229, 1.17962, 7.29715 )
-walk_speed = 4
+transform = Transform( 0.16204, 0, 0.986784, 0, 1, 0, -0.986784, 0, 0.16204, 7.68229, 1.3319, 9.21058 )
+walk_speed = 2
 running_speed = 6
 
 [node name="Assets" type="Spatial" parent="."]
-editor/display_folded = true
+transform = Transform( 1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0 )
 
 [node name="Hallway" parent="Assets" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, -0.105636 )
@@ -129,15 +136,74 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.092
 [node name="Hallway_Corner6" parent="Assets" instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0474548, 0, 18.7672 )
 
+[node name="StructureFrame" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.78083, 0.0472283, 7.34599 )
+
+[node name="StructureFrame2" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.90189, 0.0472283, 7.34599 )
+
+[node name="Floor" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.64899, 0.0197783, 7.35598 )
+
+[node name="Floor15" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.04173, 0.0197783, 7.35598 )
+
+[node name="Floor9" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.4659, 0.0197783, 7.35598 )
+
+[node name="Floor3" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.69658, 0.0197783, 7.35598 )
+
+[node name="Floor17" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.99414, 0.0197783, 7.35598 )
+
+[node name="Floor11" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.51344, 0.0197783, 7.35598 )
+
+[node name="Floor6" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.74676, 0.0197783, 7.35598 )
+
+[node name="Floor16" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.94396, 0.0197783, 7.35598 )
+
+[node name="Floor10" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.56362, 0.0197783, 7.35598 )
+
+[node name="Floor2" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.67384, 0.0197783, 7.35598 )
+
+[node name="Floor18" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01688, 0.0197783, 7.35598 )
+
+[node name="Floor12" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.4907, 0.0197783, 7.35598 )
+
+[node name="Floor4" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.72143, 0.0197783, 7.35598 )
+
+[node name="Floor13" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.96929, 0.0197783, 7.35598 )
+
+[node name="Floor7" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.53829, 0.0197783, 7.35598 )
+
+[node name="Floor5" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.77161, 0.0197783, 7.35598 )
+
+[node name="Floor14" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.91911, 0.0197783, 7.35598 )
+
+[node name="Floor8" parent="Assets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.58847, 0.0197783, 7.35598 )
+
 [node name="Lighting" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04669, 1.32539, 7.66462 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04669, 1.32539, 9.17455 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -147,8 +213,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight2" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 7.66462 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 9.24669 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -159,7 +225,7 @@ omni_attenuation = 2.0
 
 [node name="OmniLight11" type="OmniLight" parent="Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 12.6655 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -170,7 +236,7 @@ omni_attenuation = 2.0
 
 [node name="OmniLight12" type="OmniLight" parent="Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 16.2164 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -181,7 +247,7 @@ omni_attenuation = 2.0
 
 [node name="OmniLight13" type="OmniLight" parent="Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.713883, 1.32539, 19.6835 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -191,8 +257,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight14" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61106, 1.32539, 19.6835 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61106, 1.32539, 25.5686 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -202,8 +268,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight15" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09273, 1.32539, 19.6835 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9284, 1.32539, 24.188 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -213,8 +279,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight16" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8545, 1.32539, 17.8121 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9857, 1.32539, 17.8121 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -224,19 +290,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight17" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8545, 1.32539, 13.7198 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight18" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8545, 1.32539, 10.6214 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7437, 1.32539, 13.7198 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -246,8 +301,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight19" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.688, 1.32539, 8.33524 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.688, 1.32539, 9.05592 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -257,8 +312,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight3" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54618, 1.32539, 7.66462 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54618, 1.32539, 9.03823 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -268,8 +323,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight4" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48079, 1.32539, 7.66462 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48079, 1.32539, 9.09427 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -279,8 +334,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight5" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2818, 1.39937, 6.21983 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7167, 1.39937, 6.21983 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -290,8 +345,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight6" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.319, 1.39937, 2.4061 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7539, 1.39937, 2.4061 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -301,8 +356,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight7" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.319, 1.39937, -2.14042 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7539, 1.39937, -2.14042 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -312,8 +367,8 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="OmniLight8" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86906, 1.39937, -3.61204 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.73807, 1.39937, -4.2381 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -324,7 +379,7 @@ omni_attenuation = 2.0
 
 [node name="OmniLight9" type="OmniLight" parent="Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06772, 1.39937, -3.61204 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -335,7 +390,7 @@ omni_attenuation = 2.0
 
 [node name="OmniLight10" type="OmniLight" parent="Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23078, 1.39937, 1.78049 )
-light_color = Color( 0.537255, 0.588235, 0.592157, 1 )
+light_color = Color( 0.960784, 0.72549, 0.6, 1 )
 light_energy = 0.5
 light_indirect_energy = 3.5
 light_specular = 0.39
@@ -345,6 +400,6 @@ omni_range = 2.6
 omni_attenuation = 2.0
 
 [node name="GIProbe" type="GIProbe" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.22406 )
-extents = Vector3( 13.1898, 3.4745, 15.4569 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.268095, 0, 9.58893 )
+extents = Vector3( 18.6319, 3.4745, 22.6169 )
 data = SubResource( 2 )
