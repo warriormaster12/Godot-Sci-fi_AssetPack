@@ -142,6 +142,15 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.78083
 [node name="StructureFrame2" parent="Assets" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.90189, 0.0472283, 7.34599 )
 
+[node name="StructureFrame6" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.19831, 0.0472283, 7.34599 )
+
+[node name="StructureFrame7" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.42453, 0.0472283, 7.34599 )
+
+[node name="StructureFrame8" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.18179, 0.0472283, 7.34599 )
+
 [node name="Floor" parent="Assets" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.64899, 0.0197783, 7.35598 )
 
@@ -196,7 +205,17 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.9191
 [node name="Floor8" parent="Assets" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.58847, 0.0197783, 7.35598 )
 
+[node name="StructureFrame3" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.57832, 0.0326436, 7.43353 )
+
+[node name="StructureFrame4" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91812, 0.0326436, 7.43353 )
+
+[node name="StructureFrame5" parent="Assets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.40901, 0.0326436, 7.43353 )
+
 [node name="Lighting" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource( 1 )
