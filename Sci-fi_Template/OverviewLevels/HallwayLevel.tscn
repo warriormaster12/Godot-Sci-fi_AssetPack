@@ -1,355 +1,175 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Floors/Floor.dae" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Hallways/T-Hallway.dae" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Hallways/DeadEndHallway.dae" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Floors/Floor.dae" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=9]
-
-[sub_resource type="Environment" id=1]
-background_mode = 1
-background_color = Color( 0.211765, 0.211765, 0.211765, 1 )
-ambient_light_color = Color( 0.0470588, 0.12549, 0.133333, 1 )
-ambient_light_energy = 0.1
-fog_enabled = true
-fog_color = Color( 0.713726, 0.823529, 0.929412, 1 )
-fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
-fog_depth_end = 492.8
-fog_depth_curve = 0.241484
-fog_transmit_curve = 0.307786
-fog_height_enabled = true
-fog_height_curve = 0.615572
-tonemap_mode = 2
-tonemap_exposure = 0.96
-tonemap_white = 1.58
-glow_enabled = true
-adjustment_enabled = true
-adjustment_brightness = 1.1
-adjustment_contrast = 0.96
-adjustment_saturation = 1.11
-
-[sub_resource type="GIProbeData" id=2]
-bounds = AABB( -18.6319, -3.4745, -22.6169, 37.2638, 6.949, 45.2338 )
-cell_size = 0.353389
-to_cell_xform = Transform( 2.82974, 0, 0, 0, 2.82974, 0, 0, 0, 2.82974, 52.7235, 9.83194, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 2, 14, 0, 0, 8, 0, 132970544, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-dynamic_range = 4
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.7
+[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=9]
 
 [node name="HallwayLevel" type="Spatial"]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.16204, 0, 0.986784, 0, 1, 0, -0.986784, 0, 0.16204, 7.68229, 1.3319, 9.21058 )
-walk_speed = 2
-running_speed = 6
-
-[node name="Assets" type="Spatial" parent="."]
+[node name="LevelAssets" type="Spatial" parent="."]
 transform = Transform( 1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0 )
 
-[node name="Hallway" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, -0.105636 )
+[node name="X-Hallway" parent="LevelAssets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.119274 )
 
-[node name="Hallway19" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, -0.105636 )
+[node name="X-Hallway2" parent="LevelAssets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.119274 )
 
-[node name="Hallway22" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1352, -0.0135226, 10.8804 )
+[node name="Hallway" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1.00189, 0, 0, 0, 1.00189, 0, 0, 0, 1.05756, 0.0381212, 0.0402182, 1.33714 )
 
-[node name="Hallway9" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1136, -0.0145736, 1.83358 )
+[node name="Hallway7" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94147, 0.0402182, 3.41177 )
 
-[node name="Hallway10" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1136, -0.0145736, -0.151458 )
+[node name="Hallway4" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381212, 0.0402182, 5.41556 )
 
-[node name="Hallway17" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -8.88238e-08, 0, 2.03205, 0, 1, 0, -1, 0, -4.37114e-08, -7.58604, -0.0145736, -3.61177 )
+[node name="Hallway2" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381212, 0.0402182, 3.44101 )
 
-[node name="Hallway11" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.59807, -0.016234, 7.36589 )
+[node name="Hallway5" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94147, 0.0402182, 5.41256 )
 
-[node name="Hallway15" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.6, -0.016, 7.366 )
+[node name="Hallway3" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381212, 0.0402182, 7.4004 )
 
-[node name="Hallway16" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.6, -0.016, 7.366 )
+[node name="Hallway6" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94147, 0.0402182, 7.4004 )
 
-[node name="Hallway25" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -9.09856e-08, 0, 2.08151, 0, 1, 0, -1, 0, -4.37114e-08, 3.56317, -0.016, 20.3123 )
+[node name="Hallway_Corner" parent="LevelAssets" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0525535, 0.0569276, 11.371 )
 
-[node name="Hallway12" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.64041, -0.020234, 7.36589 )
+[node name="T-Hallway" parent="LevelAssets" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.93671, 0.0574226, 12.895 )
 
-[node name="Hallway13" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.6, -0.02, 7.366 )
+[node name="Hallway_Corner2" parent="LevelAssets" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9151, 0.0584855, 1.43713 )
 
-[node name="Hallway14" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.6, -0.02, 7.366 )
+[node name="Hallway8" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( -4.48832e-08, 0, -1.02681, 0, 1, 0, 1, 0, -4.37114e-08, 3.68015, 0.0404689, -0.103897 )
 
-[node name="Hallway2" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, 1.89437 )
+[node name="Hallway9" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( -4.48832e-08, 0, -1.02681, 0, 1, 0, 1, 0, -4.37114e-08, 10.3152, 0.0482741, 19.9459 )
 
-[node name="Hallway20" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1352, -0.0135226, 12.8804 )
+[node name="Hallway10" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( -2.8213e-07, 0, -5.943, 0, 1, 0, 1, 0, -1.6767e-06, 10.3152, 0.0482741, 19.9459 )
 
-[node name="Hallway3" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, 3.89437 )
+[node name="DeadEndHallway" parent="LevelAssets" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0537197, 0.0575203, -1.59842 )
 
-[node name="Hallway18" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020999, -0.0135226, 3.89437 )
+[node name="Hallway_Corner3" parent="LevelAssets" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8462, 0.0628143, 14.4592 )
 
-[node name="Hallway21" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1352, -0.0135226, 14.8804 )
+[node name="Hallway_Corner4" parent="LevelAssets" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2989, 0.0628143, 19.9345 )
 
-[node name="Hallway4" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.0213369, 8.81979 )
+[node name="Hallway_Corner5" parent="LevelAssets" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.09543, 0.0640834, 18.4116 )
 
-[node name="Hallway8" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.0213369, 14.8 )
+[node name="Hallway_Corner6" parent="LevelAssets" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.56656, 0.0677227, -0.0972446 )
 
-[node name="Hallway5" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.0213369, 10.7998 )
+[node name="Hallway11" parent="LevelAssets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.5, -5.11133, 0.0564522, 3.43872 )
 
-[node name="Hallway6" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.021, 12.8 )
+[node name="StructureFrame" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 3.3071 )
 
-[node name="Hallway7" parent="Assets" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021, -0.021, 14.8 )
+[node name="StructureFrame5" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 1.23956 )
 
-[node name="X-Hallway" parent="Assets" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128971, -0.0625373, 7.35864 )
+[node name="StructureFrame15" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, -2.38958 )
 
-[node name="Hallway_Corner" parent="Assets" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00564935, 0, -2.07302 )
+[node name="StructureFrame13" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.48778, 0.166894, -0.149058 )
 
-[node name="Hallway_Corner4" parent="Assets" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00564935, 0, -2.07302 )
+[node name="StructureFrame14" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5139, 0.166894, -0.149058 )
 
-[node name="Hallway_Corner5" parent="Assets" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1198, 0, 8.91303 )
+[node name="StructureFrame11" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89394, 0.166894, 3.3071 )
 
-[node name="Hallway_Corner7" parent="Assets" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.59245, 0, 20.2863 )
+[node name="StructureFrame8" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 11.0533 )
 
-[node name="Hallway_Corner3" parent="Assets" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.56115, 0, -3.59427 )
+[node name="StructureFrame12" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89394, 0.166894, 11.0533 )
 
-[node name="Hallway_Corner2" parent="Assets" instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.0924, 0, 5.82091 )
+[node name="StructureFrame19" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8489, 0.0621224, 16.4485 )
 
-[node name="Hallway_Corner6" parent="Assets" instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0474548, 0, 18.7672 )
+[node name="StructureFrame3" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 12.3661 )
 
-[node name="StructureFrame" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.78083, 0.0472283, 7.34599 )
+[node name="StructureFrame2" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 7.30342 )
 
-[node name="StructureFrame2" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.90189, 0.0472283, 7.34599 )
+[node name="StructureFrame6" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 7.30342 )
 
-[node name="StructureFrame6" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.19831, 0.0472283, 7.34599 )
+[node name="StructureFrame20" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 4.0395 )
 
-[node name="StructureFrame7" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.42453, 0.0472283, 7.34599 )
+[node name="StructureFrame10" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89394, 0.166894, 7.30342 )
 
-[node name="StructureFrame8" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.18179, 0.0472283, 7.34599 )
+[node name="StructureFrame7" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.51493, 0.0956473, 12.953 )
 
-[node name="StructureFrame3" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.57832, 0.0326436, 7.43353 )
+[node name="StructureFrame16" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.21267, 0.0956473, 19.9482 )
 
-[node name="StructureFrame4" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91812, 0.0326436, 7.43353 )
+[node name="StructureFrame18" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.50811, 0.0956473, 19.9482 )
 
-[node name="StructureFrame5" parent="Assets" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.40901, 0.0326436, 7.43353 )
+[node name="StructureFrame9" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.62365, 0.0956473, 12.953 )
 
-[node name="Floor" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 6.65079 )
+[node name="StructureFrame17" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3214, 0.0956473, 19.9482 )
 
-[node name="Floor17" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35478, 0.430952, 6.65079 )
+[node name="StructureFrame4" parent="LevelAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.111, 0.158946, 16.3736 )
 
-[node name="Floor18" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.70635, 0.430952, 6.65079 )
+[node name="Floor" parent="LevelAssets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, -0.861541 )
 
-[node name="Floor14" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, -2.02045 )
+[node name="Floor6" parent="LevelAssets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 0.59119 )
 
-[node name="Floor8" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 10.9931 )
+[node name="Floor7" parent="LevelAssets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 2.02556 )
 
-[node name="Floor11" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 2.32182 )
+[node name="Floor4" parent="LevelAssets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, -2.29586 )
 
-[node name="Floor4" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 5.20833 )
+[node name="Floor5" parent="LevelAssets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.932249, 0.0732816, 0.565808, -3.64829 )
 
-[node name="Floor13" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, -3.46291 )
+[node name="Floor2" parent="LevelAssets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37749, 0.565808, -0.861541 )
 
-[node name="Floor7" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 9.5506 )
+[node name="Floor3" parent="LevelAssets" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52103, 0.565808, -0.861541 )
 
-[node name="Floor9" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 0.879356 )
+[node name="StraightPipe" parent="LevelAssets" instance=ExtResource( 8 )]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1.302, 1.33085, 0.588839, 4.0749 )
 
-[node name="Floor5" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 8.10124 )
+[node name="StraightPipe2" parent="LevelAssets" instance=ExtResource( 8 )]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1.567, 1.33085, 0.588839, 7.32106 )
 
-[node name="Floor12" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, -0.570005 )
+[node name="StraightPipe3" parent="LevelAssets" instance=ExtResource( 8 )]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1.207, 1.33085, 0.588839, 9.85458 )
 
-[node name="Floor6" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 12.4435 )
+[node name="CurvedPipe" parent="LevelAssets" instance=ExtResource( 9 )]
+transform = Transform( -0.8, 0, 1.20797e-07, 0, 0.8, 0, -1.20797e-07, 0, -0.8, 1.51456, 0.57289, 11.6239 )
 
-[node name="Floor10" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000255477, 0.430952, 3.77227 )
-
-[node name="Floor2" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45403, 0.430952, 6.65079 )
-
-[node name="Floor15" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80906, 0.430952, 6.65079 )
-
-[node name="Floor20" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1606, 0.430952, 6.65079 )
-
-[node name="Floor3" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44579, 0.430952, 6.65079 )
-
-[node name="Floor16" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90924, 0.430952, 6.65079 )
-
-[node name="Floor19" parent="Assets" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26082, 0.430952, 6.65079 )
-
-[node name="CurvedPipe" parent="Assets" instance=ExtResource( 7 )]
-transform = Transform( 0.000708419, 0, -0.8, 0, 0.8, 0, 0.8, 0, 0.000708419, 9.46343, 0.69738, 8.44939 )
-
-[node name="StraightPipe" parent="Assets" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.76945, 0.64905, 8.47768 )
-
-[node name="StraightPipe2" parent="Assets" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.05329, 0.64905, 8.47768 )
-
-[node name="StraightPipe3" parent="Assets" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.32727, 0.64905, 8.47768 )
-
-[node name="StraightPipe4" parent="Assets" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.6346, 0.64905, 8.47768 )
-
-[node name="CeilingLight" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 5.96167, 1.98053, 7.44931 )
-
-[node name="CeilingLight4" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.71044, 1.98053, 7.44931 )
-
-[node name="CeilingLight6" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -0.565144, 1.98053, 7.44931 )
-
-[node name="CeilingLight7" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -3.96225, 1.98053, 7.44931 )
-
-[node name="CeilingLight9" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -7.33751, 1.98053, 7.44931 )
-
-[node name="CeilingLight2" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 4.20433, 1.98053, 7.44931 )
-
-[node name="CeilingLight3" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 0.9531, 1.98053, 7.44931 )
-
-[node name="CeilingLight5" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -2.32248, 1.98053, 7.44931 )
-
-[node name="CeilingLight8" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -5.71959, 1.98053, 7.44931 )
-
-[node name="CeilingLight10" parent="Assets" instance=ExtResource( 9 )]
-transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -9.09485, 1.98053, 7.44931 )
-
-[node name="Lighting" type="Spatial" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = SubResource( 1 )
-
-[node name="GIProbe" type="GIProbe" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.268095, 0, 9.58893 )
-extents = Vector3( 18.6319, 3.4745, 22.6169 )
-data = SubResource( 2 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.40226, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight2" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.25006, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight3" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.35936, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight4" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.1815, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight5" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.73679, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight6" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.92385, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight7" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.97286, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight8" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19387, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight9" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.20487, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
-
-[node name="SpotLight10" type="SpotLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.433, 2.43834, 9.3304 )
-light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
-light_energy = 1.11
-shadow_bias = -0.98
-spot_angle_attenuation = 2.73208
+[node name="CurvedPipe2" parent="LevelAssets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 5.65363, 0.57289, 11.6239 )
