@@ -1,17 +1,20 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Hallways/StructureFrame.dae" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Hallways/Floor.dae" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Hallways/CurvedPipe.dae" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Hallways/StraightPipe.dae" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Floors/Floor.dae" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=9]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
-background_color = Color( 0.294118, 0.290196, 0.290196, 1 )
+background_color = Color( 0.211765, 0.211765, 0.211765, 1 )
+ambient_light_color = Color( 0.0470588, 0.12549, 0.133333, 1 )
+ambient_light_energy = 0.1
 fog_enabled = true
 fog_color = Color( 0.713726, 0.823529, 0.929412, 1 )
 fog_sun_color = Color( 1, 0.901961, 0.701961, 1 )
@@ -24,12 +27,16 @@ tonemap_mode = 2
 tonemap_exposure = 0.96
 tonemap_white = 1.58
 glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 0.96
+adjustment_saturation = 1.11
 
 [sub_resource type="GIProbeData" id=2]
-bounds = AABB( -18.6319, -3.4745, -22.6169, 37.2639, 6.949, 45.2337 )
+bounds = AABB( -18.6319, -3.4745, -22.6169, 37.2638, 6.949, 45.2338 )
 cell_size = 0.353389
-to_cell_xform = Transform( 2.82975, 0, 0, 0, 2.82975, 0, 0, 0, 2.82975, 52.7236, 9.83195, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 313586336, 0, 0, 0, 1065353216, 1065353216, 1065353216, 1065353216, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+to_cell_xform = Transform( 2.82974, 0, 0, 0, 2.82974, 0, 0, 0, 2.82974, 52.7235, 9.83194, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 2, 14, 0, 0, 8, 0, 132970544, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -237,211 +244,112 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.32727
 [node name="StraightPipe4" parent="Assets" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.6346, 0.64905, 8.47768 )
 
+[node name="CeilingLight" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 5.96167, 1.98053, 7.44931 )
+
+[node name="CeilingLight4" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 2.71044, 1.98053, 7.44931 )
+
+[node name="CeilingLight6" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -0.565144, 1.98053, 7.44931 )
+
+[node name="CeilingLight7" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -3.96225, 1.98053, 7.44931 )
+
+[node name="CeilingLight9" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -7.33751, 1.98053, 7.44931 )
+
+[node name="CeilingLight2" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 4.20433, 1.98053, 7.44931 )
+
+[node name="CeilingLight3" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 0.9531, 1.98053, 7.44931 )
+
+[node name="CeilingLight5" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -2.32248, 1.98053, 7.44931 )
+
+[node name="CeilingLight8" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -5.71959, 1.98053, 7.44931 )
+
+[node name="CeilingLight10" parent="Assets" instance=ExtResource( 9 )]
+transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -9.09485, 1.98053, 7.44931 )
+
 [node name="Lighting" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource( 1 )
-
-[node name="OmniLight" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04669, 1.32539, 9.17455 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight2" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 9.24669 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight11" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 12.6655 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight12" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115035, 1.32539, 16.2164 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight13" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.713883, 1.32539, 19.6835 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight14" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61106, 1.32539, 25.5686 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight15" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9284, 1.32539, 24.188 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight16" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9857, 1.32539, 17.8121 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight17" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7437, 1.32539, 10.4939 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight19" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.688, 1.32539, 9.05592 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight3" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54618, 1.32539, 9.03823 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight4" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48079, 1.32539, 9.09427 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight5" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7167, 1.39937, 6.21983 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight6" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7539, 1.39937, 2.4061 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight7" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7539, 1.39937, -2.14042 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight8" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.73807, 1.39937, -4.2381 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight9" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06772, 1.39937, -3.61204 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
-
-[node name="OmniLight10" type="OmniLight" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23078, 1.39937, 1.78049 )
-light_color = Color( 0.960784, 0.72549, 0.6, 1 )
-light_energy = 0.5
-light_indirect_energy = 3.5
-light_specular = 0.39
-shadow_enabled = true
-shadow_contact = 2.0
-omni_range = 2.6
-omni_attenuation = 2.0
 
 [node name="GIProbe" type="GIProbe" parent="Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.268095, 0, 9.58893 )
 extents = Vector3( 18.6319, 3.4745, 22.6169 )
 data = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.40226, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight2" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.25006, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight3" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.35936, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight4" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.1815, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight5" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.73679, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight6" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.92385, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight7" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.97286, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight8" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.19387, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight9" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.20487, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208
+
+[node name="SpotLight10" type="SpotLight" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.433, 2.43834, 9.3304 )
+light_color = Color( 0.952941, 0.862745, 0.67451, 1 )
+light_energy = 1.11
+shadow_bias = -0.98
+spot_angle_attenuation = 2.73208

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/StructureFrame.dae-a999c6ce0021b4dde91c38b1f469a886.scn"
+path="res://.import/T-Hallway.dae-3fc1ed5a14f224a45a1f68a87312d9c1.scn"
 
 [deps]
 
-source_file="res://Assets/Hallways/StructureFrame.dae"
-dest_files=[ "res://.import/StructureFrame.dae-a999c6ce0021b4dde91c38b1f469a886.scn" ]
+source_file="res://Assets/Hallways/T-Hallway.dae"
+dest_files=[ "res://.import/T-Hallway.dae-3fc1ed5a14f224a45a1f68a87312d9c1.scn" ]
 
 [params]
 

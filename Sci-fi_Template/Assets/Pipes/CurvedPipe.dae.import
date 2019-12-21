@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/StraightPipe.dae-3b18046450906057e0e8189c19d11c4e.scn"
+path="res://.import/CurvedPipe.dae-b64e1c41d0deb4716b89ab53ea1f6249.scn"
 
 [deps]
 
-source_file="res://Assets/Hallways/StraightPipe.dae"
-dest_files=[ "res://.import/StraightPipe.dae-3b18046450906057e0e8189c19d11c4e.scn" ]
+source_file="res://Assets/Pipes/CurvedPipe.dae"
+dest_files=[ "res://.import/CurvedPipe.dae-b64e1c41d0deb4716b89ab53ea1f6249.scn" ]
 
 [params]
 

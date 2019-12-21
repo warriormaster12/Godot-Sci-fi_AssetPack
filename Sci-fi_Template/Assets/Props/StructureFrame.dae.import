@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Floor.dae-c01eaa1ea33c16cd15c12bbcd5f5409d.scn"
+path="res://.import/StructureFrame.dae-3922f594e807b4214be3537bca572db9.scn"
 
 [deps]
 
-source_file="res://Assets/Hallways/Floor.dae"
-dest_files=[ "res://.import/Floor.dae-c01eaa1ea33c16cd15c12bbcd5f5409d.scn" ]
+source_file="res://Assets/Props/StructureFrame.dae"
+dest_files=[ "res://.import/StructureFrame.dae-3922f594e807b4214be3537bca572db9.scn" ]
 
 [params]
 
