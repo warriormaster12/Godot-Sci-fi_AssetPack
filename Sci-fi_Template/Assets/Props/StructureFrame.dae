@@ -5,13 +5,39 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.81.16 commit date:2019-11-20, commit time:14:27, hash:26bd5ebd42e3</authoring_tool>
     </contributor>
-    <created>2019-12-20T21:38:29</created>
-    <modified>2019-12-20T21:38:29</modified>
+    <created>2019-12-21T20:49:40</created>
+    <modified>2019-12-21T20:49:40</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
-  <library_effects/>
+  <library_effects>
+    <effect id="MediumDark-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.2079166 0.2079166 0.2079166 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.2857143</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
   <library_images/>
+  <library_materials>
+    <material id="MediumDark-material" name="MediumDark">
+      <instance_effect url="#MediumDark-effect"/>
+    </material>
+  </library_materials>
   <library_geometries>
     <geometry id="Cube_008-mesh" name="Cube.008">
       <mesh>
@@ -90,7 +116,7 @@
         <vertices id="Cube_007-mesh-vertices">
           <input semantic="POSITION" source="#Cube_007-mesh-positions"/>
         </vertices>
-        <polylist count="1721">
+        <polylist material="MediumDark-material" count="1721">
           <input semantic="VERTEX" source="#Cube_007-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cube_007-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Cube_007-mesh-map-0" offset="2" set="0"/>
@@ -104,7 +130,15 @@
     <visual_scene id="Scene" name="Scene">
       <node id="StructureFrame" name="StructureFrame" type="NODE">
         <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
-        <instance_geometry url="#Cube_007-mesh" name="StructureFrame"/>
+        <instance_geometry url="#Cube_007-mesh" name="StructureFrame">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="MediumDark-material" target="#MediumDark-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
         <node id="StructureFrame-colonly" name="StructureFrame-colonly" type="NODE">
           <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
           <instance_geometry url="#Cube_008-mesh" name="StructureFrame-colonly"/>
