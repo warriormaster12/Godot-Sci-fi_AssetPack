@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Hallways/Floor.dae" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Hallways/StructureFrame.dae" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=5]
+
+[node name="AssetOverview" type="Spatial"]
+
+[node name="Floor" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99282, -2.20714, -3.38726 )
+
+[node name="Hallway" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216734, -1.66789, -2.42589 )
+
+[node name="Hallway_Corner" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92424, -1.14796, 1.98103 )
+
+[node name="StructureFrame" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3468, -0.887486, -2.15019 )
+
+[node name="X-Hallway" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.36663, -1.74721, 3.76639 )

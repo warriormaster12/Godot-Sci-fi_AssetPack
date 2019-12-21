@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Hallways/StructureFrame.dae" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Hallways/Floor.dae" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Hallways/CurvedPipe.dae" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Hallways/StraightPipe.dae" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -220,7 +222,23 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90924, 0.430952, 6.65079 )
 [node name="Floor19" parent="Assets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26082, 0.430952, 6.65079 )
 
+[node name="CurvedPipe" parent="Assets" instance=ExtResource( 7 )]
+transform = Transform( 0.000708419, 0, -0.8, 0, 0.8, 0, 0.8, 0, 0.000708419, 9.46343, 0.69738, 8.44939 )
+
+[node name="StraightPipe" parent="Assets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.76945, 0.64905, 8.47768 )
+
+[node name="StraightPipe2" parent="Assets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.05329, 0.64905, 8.47768 )
+
+[node name="StraightPipe3" parent="Assets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.32727, 0.64905, 8.47768 )
+
+[node name="StraightPipe4" parent="Assets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.6346, 0.64905, 8.47768 )
+
 [node name="Lighting" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource( 1 )
