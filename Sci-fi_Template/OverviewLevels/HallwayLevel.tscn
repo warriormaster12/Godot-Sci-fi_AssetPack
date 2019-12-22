@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
@@ -10,10 +10,13 @@
 [ext_resource path="res://Assets/Props/ClosedWindow.dae" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Props/Canister.dae" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Props/BoxContainer.dae" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=12]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Props/DoorFrame.dae" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Props/Door.dae" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Props/Panel.dae" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=15]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=17]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.247059, 0.247059, 0.247059, 1 )
@@ -45,6 +48,7 @@ adjustment_saturation = 1.2
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 
 [node name="Hallways" type="Spatial" parent="LevelAssets"]
+editor/display_folded = true
 
 [node name="X-Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.119274 )
@@ -103,14 +107,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8462, 0.0628143, 14.4592 )
 [node name="Hallway_Corner4" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2989, 0.0628143, 19.9345 )
 
-[node name="Hallway_Corner5" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.09543, 0.0640834, 18.4116 )
-
 [node name="Hallway_Corner6" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.54956, 0.0844658, -0.0996116 )
 
 [node name="Hallway11" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.5, -5.11133, 0.0564522, 3.43872 )
+
+[node name="T-Hallway3" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -1.56432e-07, 0, 1, 0, 1.50996e-07, 0, -1.036, -5.07204, 0.153637, 19.949 )
 
 [node name="Floors" type="Spatial" parent="LevelAssets"]
 editor/display_folded = true
@@ -213,6 +217,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 17.8756 )
 
 [node name="Floor51" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 19.2975 )
+
+[node name="Floor74" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
+transform = Transform( 1.26382, 0, 0, 0, 1, 0, 0, 0, 1, -5.28176, 0.565808, 20.7442 )
+
+[node name="Floor75" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
+transform = Transform( 1.26382, 0, 0, 0, 1, 0, 0, 0, 0.847801, -5.28176, 0.565808, 22.1832 )
 
 [node name="Floor52" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5661, 0.565808, 19.2975 )
@@ -335,6 +345,7 @@ transform = Transform( 0.704, 0, 0, 0, 1, 0, 0, 0, 1, 8.18149, 0.565808, 12.1691
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83297, 0.565808, -0.861541 )
 
 [node name="Props" type="Spatial" parent="LevelAssets"]
+editor/display_folded = true
 
 [node name="StructureFrame" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 3.3071 )
@@ -570,70 +581,94 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.888835, 0.21652, -3.03786 )
 [node name="Canister47" parent="LevelAssets/Props" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08003, 0.21652, -3.03786 )
 
+[node name="DoorFrame" parent="LevelAssets/Props" instance=ExtResource( 11 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14629, 0.343716, 23.3427 )
+
+[node name="Door" parent="LevelAssets/Props/DoorFrame" instance=ExtResource( 12 )]
+
+[node name="Panel" parent="LevelAssets/Props" instance=ExtResource( 13 )]
+transform = Transform( -3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -5.95587, 0.569301, 22.2345 )
+
+[node name="Canister50" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 22.3833 )
+
+[node name="Canister53" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 21.6177 )
+
+[node name="Canister51" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 22.776 )
+
+[node name="Canister54" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 22.0104 )
+
+[node name="Canister52" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 23.1617 )
+
 [node name="Pipes" type="Spatial" parent="LevelAssets"]
 editor/display_folded = true
 
-[node name="StraightPipe" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.565, 1.33085, 0.588839, 4.0749 )
 
-[node name="StraightPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.79997, -0.00694661, 0, 0.00694661, 0.79997, 0, 0, 0, 0.585, 5.78824, 0.588839, 4.19479 )
 
-[node name="StraightPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( -3.49678e-08, 3.03939e-10, 0.293, 0.0069533, 0.79997, -4.60323e-18, -0.79997, 0.0069533, -1.28074e-08, 3.83526, 0.578224, 1.09766 )
 
-[node name="StraightPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1.567, 1.33085, 0.588839, 7.32106 )
 
-[node name="StraightPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.79997, -0.00694661, 0, 0.00694661, 0.79997, 0, 0, 0, 1.567, 5.78824, 0.588839, 7.33167 )
 
-[node name="StraightPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1.207, 1.33085, 0.588839, 9.85458 )
 
-[node name="StraightPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.79997, -0.00694661, 0, 0.00694661, 0.79997, 0, 0, 0, 1.207, 5.78824, 0.588839, 9.86519 )
 
-[node name="StraightPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( -3.49691e-08, 0, 0.292, 0, 0.8, 0, -0.8, 0, -1.27637e-08, 3.86535, 0.605557, 11.8198 )
 
-[node name="CurvedPipe" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( -0.8, 0, 1.20797e-07, 0, 0.8, 0, -1.20797e-07, 0, -0.8, 1.51456, 0.57289, 11.6239 )
 
-[node name="CurvedPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( -3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 5.65363, 0.57289, 11.6239 )
 
-[node name="CurvedPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.59733, 0.558755, 1.2503 )
 
-[node name="CurvedPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 1.47956, 0.568268, 1.25071 )
 
-[node name="StraightPipe9" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe9" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.285155, 0.0932029, 0, -0.0932029, 0.285155, 0, 0, 0, 0.3, -4.45335, 2.20392, 3.34612 )
 
-[node name="StraightPipe11" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe11" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( -0.284997, -0.0931513, -0.00998619, -0.0932029, 0.285155, 0, 0.00949204, 0.00310248, -0.299834, -5.56203, 2.17642, 16.53 )
 
-[node name="StraightPipe10" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe10" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.285155, 0.0932029, 0, -0.0932029, 0.285155, 0, 0, 0, 0.3, -5.52368, 2.20392, 3.34612 )
 
-[node name="StraightPipe12" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="StraightPipe12" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( -0.284997, -0.0931513, -0.00998619, -0.0932029, 0.285155, 0, 0.00949204, 0.00310248, -0.299834, -4.4923, 2.17642, 16.4944 )
 
-[node name="CurvedPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0, 0.3, -4.47032, 2.28752, 2.08003 )
 
-[node name="CurvedPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( 1.31062e-08, -0.299834, -0.00998619, -0.3, -1.31134e-08, 0, -4.3651e-10, 0.00998619, -0.299834, -5.50294, 2.26002, 17.7948 )
 
-[node name="CurvedPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0, 0.3, -5.54065, 2.28752, 2.08003 )
 
-[node name="CurvedPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
+[node name="CurvedPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( 1.31062e-08, -0.299834, -0.00998619, -0.3, -1.31134e-08, 0, -4.3651e-10, 0.00998619, -0.299834, -4.43483, 2.26146, 17.7592 )
 
-[node name="Player" parent="." instance=ExtResource( 13 )]
+[node name="Player" parent="." instance=ExtResource( 16 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.55974, 0 )
 walk_speed = 2
 running_speed = 5
@@ -644,7 +679,7 @@ editor/display_folded = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource( 2 )
 
-[node name="CeilingLight" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, -0.188472 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight"]
@@ -652,7 +687,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight10" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight10" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 3.70905 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight10"]
@@ -660,7 +695,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight14" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight14" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 3.70905 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight14"]
@@ -668,7 +703,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight3" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight3" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, 3.89844 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight3"]
@@ -676,7 +711,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight13" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight13" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 8.78652 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight13"]
@@ -684,7 +719,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight18" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight18" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 8.78652 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight18"]
@@ -692,7 +727,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight23" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight23" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.7913, 3.22652, 22.4916 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight23"]
@@ -700,7 +735,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight4" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight4" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, 8.18497 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight4"]
@@ -708,7 +743,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight12" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight12" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 13.0731 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight12"]
@@ -716,7 +751,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight16" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight16" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 13.0731 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight16"]
@@ -724,7 +759,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight22" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight22" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.7913, 3.22652, 26.7782 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight22"]
@@ -732,7 +767,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight5" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight5" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.157377, 3.2409, 13.2581 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight5"]
@@ -740,7 +775,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight9" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight9" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51233, 3.2409, 18.1461 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight9"]
@@ -748,7 +783,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight17" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight17" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.289, 3.2409, 19.4051 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight17"]
@@ -756,7 +791,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight6" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight6" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.155971, 3.23953, 19.3968 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight6"]
@@ -764,7 +799,7 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight11" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight11" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51374, 3.23953, 24.2848 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight11"]
@@ -772,7 +807,15 @@ transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, 
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight2" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight26" parent="Lighting" instance=ExtResource( 17 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51374, 3.23953, 32.9765 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight26"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight2" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.126432, 3.22652, -0.20892 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight2"]
@@ -780,7 +823,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight19" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight19" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 10.2409, 3.22652, 19.434 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight19"]
@@ -788,7 +831,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight21" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight21" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 10.2409, 3.22652, 29.9711 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight21"]
@@ -796,7 +839,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight8" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight8" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -4.00512, 3.22652, -0.20892 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight8"]
@@ -804,7 +847,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight20" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight20" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.0918356, 3.22652, 19.434 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight20"]
@@ -812,7 +855,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight24" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight24" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.0918356, 3.22652, 29.9711 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight24"]
@@ -820,7 +863,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight7" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight7" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 5.41002, 3.22652, -0.20892 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight7"]
@@ -828,7 +871,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight15" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight15" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 19.0701, 3.22652, 19.434 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight15"]
@@ -836,7 +879,7 @@ transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.
 shadow_enabled = true
 spot_attenuation = 0.965938
 
-[node name="CeilingLight25" parent="Lighting" instance=ExtResource( 14 )]
+[node name="CeilingLight25" parent="Lighting" instance=ExtResource( 17 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 19.0701, 3.22652, 29.9711 )
 
 [node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight25"]
