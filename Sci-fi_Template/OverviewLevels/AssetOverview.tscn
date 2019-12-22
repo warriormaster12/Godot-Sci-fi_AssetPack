@@ -24,6 +24,7 @@
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0 )
+use_collision = true
 mesh = SubResource( 1 )
 
 [node name="Floor" parent="." instance=ExtResource( 1 )]
