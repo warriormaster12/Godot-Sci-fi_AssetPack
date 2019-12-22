@@ -635,8 +635,8 @@ transform = Transform( 1.31062e-08, -0.299834, -0.00998619, -0.3, -1.31134e-08, 
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.55974, 0 )
-walk_speed = 3
-running_speed = 6
+walk_speed = 2
+running_speed = 5
 
 [node name="Lighting" type="Spatial" parent="."]
 editor/display_folded = true

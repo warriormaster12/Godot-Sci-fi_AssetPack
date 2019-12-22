@@ -7,6 +7,9 @@ var camera_change = Vector2()
 
 # Camera shake variables
 export var Health = 100 
+var Number_of_jumps=0
+export var Max_Jumps = 1
+export var Jump_Height = 8
 var velocity = Vector3()
 var direction = Vector3()
 
@@ -15,8 +18,7 @@ var direction = Vector3()
 export var walk_speed = 7
 export var running_speed = 10
 var gravity = -9.8 * 3
-#const MAX_SPEED = 0
-#const MAX_RUNNING_SPEED = 0
+var speed = 0
 const ACCEL = 10 
 const DEACCEL = 10
 
@@ -63,7 +65,7 @@ func GroundMovement(delta):
 	temp_velocity.y = 0
 	
 	
-	var target = direction * walk_speed
+	var target = direction * speed
 	
 	var acceleration 
 	if direction.dot(temp_velocity) > 0: 
@@ -78,6 +80,17 @@ func GroundMovement(delta):
 	
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
+	if Input.is_action_pressed("Sprint"): 
+		speed = running_speed
+	else: 
+		speed = walk_speed
+	if Input.is_action_pressed("Jump") and is_on_floor(): 
+		if Number_of_jumps != Max_Jumps:
+			velocity.y = Jump_Height
+			Number_of_jumps += 1
+	else: 
+		Number_of_jumps = 0 
+	
 func aim(): 
 	if camera_change.length() > 0:
 		$Head.rotate_y(deg2rad(-camera_change.x * mouse_sensitivity))
@@ -86,6 +99,7 @@ func aim():
 		$Head/Camera.rotate_x(deg2rad(change))
 		camera_angle += change 
 	camera_change = Vector2()
+	
 
 
 	
