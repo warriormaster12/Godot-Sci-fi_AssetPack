@@ -1,48 +1,76 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Floors/Floor.dae" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Hallways/DeadEndHallway.dae" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Hallways/T-Hallway.dae" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Hallways/DeadEndHallway.dae" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Hallways/T-Hallway.dae" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Props/ClosedWindow.dae" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Props/BoxContainer.dae" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Props/Canister.dae" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Props/ClosedWindow.dae" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Props/DoorFrame.dae" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Props/Door.dae" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Props/Panel.dae" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=16]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=17]
+
+[sub_resource type="PlaneMesh" id=1]
 
 [node name="AssetOverview" type="Spatial"]
 
+[node name="CSGMesh" type="CSGMesh" parent="."]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0 )
+mesh = SubResource( 1 )
+
 [node name="Floor" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99282, -2.20714, -3.38726 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5479, 0.135613, -19.367 )
 
-[node name="Hallway" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216734, -1.66789, -2.42589 )
+[node name="DeadEndHallway" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.2737, 0.0895764, -17.6097 )
 
-[node name="Hallway_Corner" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92424, -1.14796, 1.98103 )
+[node name="Hallway" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0483, 0, -19.5042 )
 
-[node name="StructureFrame" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3468, -0.887486, -2.15019 )
+[node name="Hallway_Corner" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25898, 0.0110416, -17.3106 )
 
-[node name="X-Hallway" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.36663, -1.74721, 3.76639 )
+[node name="T-Hallway" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11449, 0.161059, -16.5979 )
 
-[node name="StraightPipe" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74486, -3.13865, 2.94274 )
+[node name="X-Hallway" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3376, 0.0683889, -16.8894 )
 
 [node name="CurvedPipe" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0658565, -2.23553, 2.02215 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19539, 0.0821369, -16.8896 )
 
-[node name="DeadEndHallway" parent="." instance=ExtResource( 8 )]
-transform = Transform( -0.732232, 0, 0.681055, 0, 1, 0, -0.681055, 0, -0.732232, 2.84829, -1.40502, 5.5592 )
+[node name="StraightPipe" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.93429, 0.144519, -16.0883 )
 
-[node name="T-Hallway" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.732232, 0, 0.681055, 0, 1, 0, -0.681055, 0, -0.732232, -10.4091, -1.11691, -4.2361 )
+[node name="BoxContainer" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.84783, 0.182691, -17.3266 )
 
-[node name="ClosedWindow" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.0610168, 0, -0.998137, 0, 1, 0, 0.998137, 0, 0.0610168, -2.97547, 0.793704, 3.94756 )
+[node name="Canister" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.998459, 0, -0.0554878, 0, 1, 0, 0.0554878, 0, 0.998459, 8.67399, 0.185251, -16.9632 )
 
 [node name="CeilingLight" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.997333, 0, -0.0729862, 0, 1, 0, 0.0729862, 0, 0.997333, -2.94508, 1.31166, 4.02663 )
+transform = Transform( 1, 0, 0, 0, 0.0295845, 0.999562, 0, -0.999562, 0.0295845, 9.76667, 0.375738, -16.8186 )
+
+[node name="ClosedWindow" parent="." instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5525, 0.167055, -16.8295 )
+
+[node name="DoorFrame" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6075, 0.105792, -16.9901 )
+
+[node name="Door" parent="DoorFrame" instance=ExtResource( 14 )]
+
+[node name="Panel" parent="." instance=ExtResource( 15 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.4968, 0.00941864, -17.1778 )
+
+[node name="StructureFrame" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0843, -0.12418, -17.0836 )
+
+[node name="Player" parent="." instance=ExtResource( 17 )]
