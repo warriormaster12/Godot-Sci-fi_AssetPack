@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Floors/Floor.dae" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Hallways/DeadEndHallway.dae" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Hallways/T-Hallway.dae" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Props/ClosedWindow.dae" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=11]
 
 [node name="AssetOverview" type="Spatial"]
 
@@ -22,3 +28,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3468, -0.887486, -2.15019 )
 
 [node name="X-Hallway" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.36663, -1.74721, 3.76639 )
+
+[node name="StraightPipe" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74486, -3.13865, 2.94274 )
+
+[node name="CurvedPipe" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0658565, -2.23553, 2.02215 )
+
+[node name="DeadEndHallway" parent="." instance=ExtResource( 8 )]
+transform = Transform( -0.732232, 0, 0.681055, 0, 1, 0, -0.681055, 0, -0.732232, 2.84829, -1.40502, 5.5592 )
+
+[node name="T-Hallway" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.732232, 0, 0.681055, 0, 1, 0, -0.681055, 0, -0.732232, -10.4091, -1.11691, -4.2361 )
+
+[node name="ClosedWindow" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.0610168, 0, -0.998137, 0, 1, 0, 0.998137, 0, 0.0610168, -2.97547, 0.793704, 3.94756 )
+
+[node name="CeilingLight" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.997333, 0, -0.0729862, 0, 1, 0, 0.0729862, 0, 0.997333, -2.94508, 1.31166, 4.02663 )

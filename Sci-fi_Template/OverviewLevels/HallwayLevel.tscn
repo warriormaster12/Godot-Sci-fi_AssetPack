@@ -1,536 +1,853 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Hallways/T-Hallway.dae" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Hallways/DeadEndHallway.dae" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Floors/Floor.dae" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Props/ClosedWindow.dae" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=11]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Hallways/Hallway_Corner.dae" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Hallways/T-Hallway.dae" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Hallways/DeadEndHallway.dae" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Floors/Floor.dae" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Props/StructureFrame.dae" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Props/ClosedWindow.dae" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Props/Canister.dae" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Props/BoxContainer.dae" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Pipes/StraightPipe.dae" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Pipes/CurvedPipe.dae" type="PackedScene" id=12]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Props/CeilingLight.dae" type="PackedScene" id=14]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_top_color = Color( 0.247059, 0.247059, 0.247059, 1 )
+sky_horizon_color = Color( 0.541176, 0.439216, 0.278431, 1 )
+sky_curve = 0.18
+
+[sub_resource type="Environment" id=2]
+background_mode = 3
+background_sky = SubResource( 1 )
+fog_enabled = true
+fog_color = Color( 0.72549, 0.72549, 0.72549, 1 )
+fog_depth_enabled = false
+fog_depth_end = 2840.5
+fog_depth_curve = 0.164938
+fog_transmit_curve = 0.659755
+fog_height_enabled = true
+fog_height_curve = 0.450624
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 3.0
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_contrast = 1.29
+adjustment_saturation = 1.2
 
 [node name="HallwayLevel" type="Spatial"]
 
 [node name="LevelAssets" type="Spatial" parent="."]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 
-[node name="CeilingLight" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0994105, 2.15101, -0.125648 )
-
-[node name="CeilingLight10" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01373, 2.15101, 2.4727 )
-
-[node name="CeilingLight14" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85381, 2.15101, 2.4727 )
-
-[node name="CeilingLight3" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0994105, 2.15101, 2.59896 )
-
-[node name="CeilingLight13" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01373, 2.15101, 5.85768 )
-
-[node name="CeilingLight18" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85381, 2.15101, 5.85768 )
-
-[node name="CeilingLight23" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8609, 2.15101, 14.9944 )
-
-[node name="CeilingLight4" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0994105, 2.15101, 5.45665 )
-
-[node name="CeilingLight12" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01373, 2.15101, 8.71537 )
-
-[node name="CeilingLight16" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85381, 2.15101, 8.71537 )
-
-[node name="CeilingLight22" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8609, 2.15101, 17.8521 )
-
-[node name="CeilingLight5" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104918, 2.1606, 8.83873 )
-
-[node name="CeilingLight9" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00822, 2.1606, 12.0974 )
-
-[node name="CeilingLight17" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85932, 2.1606, 12.9367 )
-
-[node name="CeilingLight6" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103981, 2.15969, 12.9312 )
-
-[node name="CeilingLight11" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00916, 2.15969, 16.1899 )
-
-[node name="CeilingLight2" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0842879, 2.15101, -0.13928 )
-
-[node name="CeilingLight19" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.82725, 2.15101, 12.956 )
-
-[node name="CeilingLight21" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.82725, 2.15101, 19.9807 )
-
-[node name="CeilingLight8" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.67008, 2.15101, -0.13928 )
-
-[node name="CeilingLight20" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0612237, 2.15101, 12.956 )
-
-[node name="CeilingLight24" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0612237, 2.15101, 19.9807 )
-
-[node name="CeilingLight7" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.60668, 2.15101, -0.13928 )
-
-[node name="CeilingLight15" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.7134, 2.15101, 12.956 )
-
-[node name="CeilingLight25" parent="LevelAssets" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.7134, 2.15101, 19.9807 )
-
 [node name="Hallways" type="Spatial" parent="LevelAssets"]
-editor/display_folded = true
 
-[node name="X-Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
+[node name="X-Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.119274 )
 
-[node name="X-Hallway2" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
+[node name="X-Hallway2" parent="LevelAssets/Hallways" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.119274 )
 
-[node name="Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1.00189, 0, 0, 0, 1.00189, 0, 0, 0, 1.05756, 0.0381212, 0.0402182, 1.33714 )
 
-[node name="Hallway7" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway7" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94147, 0.0402182, 3.41177 )
 
-[node name="Hallway4" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway4" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381212, 0.0402182, 5.41556 )
 
-[node name="Hallway2" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway2" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381212, 0.0402182, 3.44101 )
 
-[node name="Hallway5" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway5" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94147, 0.0402182, 5.41256 )
 
-[node name="Hallway3" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway3" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381212, 0.0402182, 7.4004 )
 
-[node name="Hallway6" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway6" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94147, 0.0402182, 7.4004 )
 
-[node name="Hallway_Corner" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
+[node name="Hallway_Corner" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0525535, 0.0569276, 11.371 )
 
-[node name="T-Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 5 )]
+[node name="T-Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.93671, 0.0574226, 12.895 )
 
-[node name="T-Hallway2" parent="LevelAssets/Hallways" instance=ExtResource( 5 )]
+[node name="T-Hallway2" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.93671, 0.0574226, 12.895 )
 
-[node name="Hallway_Corner2" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
+[node name="Hallway_Corner2" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9151, 0.0584855, 1.43713 )
 
-[node name="Hallway8" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway8" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( -4.48832e-08, 0, -1.02681, 0, 1, 0, 1, 0, -4.37114e-08, 3.68015, 0.0404689, -0.103897 )
 
-[node name="Hallway9" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway9" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( -4.48832e-08, 0, -1.02681, 0, 1, 0, 1, 0, -4.37114e-08, 10.3152, 0.0482741, 19.9459 )
 
-[node name="Hallway10" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway10" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( -2.8213e-07, 0, -5.943, 0, 1, 0, 1, 0, -1.6767e-06, 10.3152, 0.0482741, 19.9459 )
 
-[node name="DeadEndHallway" parent="LevelAssets/Hallways" instance=ExtResource( 6 )]
+[node name="DeadEndHallway" parent="LevelAssets/Hallways" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0537197, 0.0575203, -1.59842 )
 
-[node name="Hallway_Corner3" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
+[node name="Hallway_Corner3" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8462, 0.0628143, 14.4592 )
 
-[node name="Hallway_Corner4" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
+[node name="Hallway_Corner4" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2989, 0.0628143, 19.9345 )
 
-[node name="Hallway_Corner5" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
+[node name="Hallway_Corner5" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.09543, 0.0640834, 18.4116 )
 
-[node name="Hallway_Corner6" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.56656, 0.0677227, -0.0972446 )
+[node name="Hallway_Corner6" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.54956, 0.0844658, -0.0996116 )
 
-[node name="Hallway11" parent="LevelAssets/Hallways" instance=ExtResource( 3 )]
+[node name="Hallway11" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.5, -5.11133, 0.0564522, 3.43872 )
 
 [node name="Floors" type="Spatial" parent="LevelAssets"]
 editor/display_folded = true
 
-[node name="Floor" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, -0.861541 )
 
-[node name="Floor9" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor9" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3987, 0.565808, -0.861541 )
 
-[node name="Floor12" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor12" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28072, 0.565808, -0.861541 )
 
-[node name="Floor6" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor6" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 0.59119 )
 
-[node name="Floor7" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor7" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 2.02556 )
 
-[node name="Floor19" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor19" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 3.47122 )
 
-[node name="Floor23" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor23" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 4.9081 )
 
-[node name="Floor25" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor25" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 6.34475 )
 
-[node name="Floor30" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor30" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 7.77836 )
 
-[node name="Floor32" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor32" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 7.77836 )
 
-[node name="Floor36" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor36" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 9.23108 )
 
-[node name="Floor37" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor37" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 10.6647 )
 
-[node name="Floor40" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor40" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, 12.1107 )
 
-[node name="Floor4" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor4" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0732816, 0.565808, -2.29586 )
 
-[node name="Floor5" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor5" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.932249, 0.0732816, 0.565808, -3.64829 )
 
-[node name="Floor2" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor2" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37749, 0.565808, -0.861541 )
 
-[node name="Floor8" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor8" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94793, 0.565808, -0.861541 )
 
-[node name="Floor11" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor11" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.73149, 0.565808, -0.861541 )
 
-[node name="Floor14" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor14" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 0.596242 )
 
-[node name="Floor18" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor18" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 2.05071 )
 
-[node name="Floor21" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor21" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 3.49637 )
 
-[node name="Floor22" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor22" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 4.93324 )
 
-[node name="Floor27" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor27" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 6.36989 )
 
-[node name="Floor29" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor29" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 7.80351 )
 
-[node name="Floor45" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor45" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 13.5432 )
 
-[node name="Floor33" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor33" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 7.80351 )
 
-[node name="Floor34" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor34" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 9.25623 )
 
-[node name="Floor49" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor49" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 14.996 )
 
-[node name="Floor38" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor38" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 10.6898 )
 
-[node name="Floor50" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor50" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 16.4295 )
 
-[node name="Floor41" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor41" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 12.1359 )
 
-[node name="Floor46" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor46" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 17.8756 )
 
-[node name="Floor51" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor51" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00485, 0.565808, 19.2975 )
 
-[node name="Floor52" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor52" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5661, 0.565808, 19.2975 )
 
-[node name="Floor53" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor53" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11767, 0.565808, 19.2975 )
 
-[node name="Floor54" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor54" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.666368, 0.565808, 19.2975 )
 
-[node name="Floor55" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor55" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.779147, 0.565808, 19.2975 )
 
-[node name="Floor56" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor56" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22087, 0.565808, 19.2975 )
 
-[node name="Floor57" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor57" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6614, 0.565808, 19.2975 )
 
-[node name="Floor58" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor58" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09946, 0.565808, 19.2975 )
 
-[node name="Floor59" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor59" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52324, 0.565808, 19.2975 )
 
-[node name="Floor60" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor60" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96323, 0.565808, 19.2975 )
 
-[node name="Floor61" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor61" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.38134, 0.565808, 19.2975 )
 
-[node name="Floor62" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor62" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8262, 0.565808, 19.2975 )
 
-[node name="Floor63" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor63" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2433, 0.565808, 19.2975 )
 
-[node name="Floor64" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor64" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6935, 0.565808, 19.2975 )
 
-[node name="Floor65" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor65" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6935, 0.565808, 17.855 )
 
-[node name="Floor66" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor66" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6935, 0.565808, 16.446 )
 
-[node name="Floor67" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor67" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6935, 0.565808, 15.0284 )
 
-[node name="Floor68" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor68" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6935, 0.565808, 13.5904 )
 
-[node name="Floor69" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor69" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6935, 0.565808, 12.1691 )
 
-[node name="Floor70" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor70" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2619, 0.565808, 12.1691 )
 
-[node name="Floor71" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor71" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8341, 0.565808, 12.1691 )
 
-[node name="Floor72" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor72" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.39233, 0.565808, 12.1691 )
 
-[node name="Floor3" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor3" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52103, 0.565808, -0.861541 )
 
-[node name="Floor10" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor10" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84645, 0.565808, -0.861541 )
 
-[node name="Floor15" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor15" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.29993, 0.565808, -0.861541 )
 
-[node name="Floor16" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor16" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 0.571958 )
 
-[node name="Floor17" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor17" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 2.02642 )
 
-[node name="Floor20" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor20" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 3.47208 )
 
-[node name="Floor24" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor24" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 4.90896 )
 
-[node name="Floor26" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor26" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 6.34561 )
 
-[node name="Floor28" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor28" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 7.77922 )
 
-[node name="Floor31" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor31" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 7.77922 )
 
-[node name="Floor35" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor35" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 9.23195 )
 
-[node name="Floor39" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor39" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 10.6655 )
 
-[node name="Floor42" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor42" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94286, 0.565808, 12.1116 )
 
-[node name="Floor43" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor43" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48923, 0.565808, 12.1116 )
 
-[node name="Floor44" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor44" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07309, 0.565808, 12.1116 )
 
-[node name="Floor47" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor47" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6374, 0.565808, 12.1116 )
 
-[node name="Floor48" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor48" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 0.792, 0, 0, 0, 1, 0, 0, 0, 1, 1.36358, 0.565808, 12.1109 )
 
-[node name="Floor73" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor73" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 0.704, 0, 0, 0, 1, 0, 0, 0, 1, 8.18149, 0.565808, 12.1691 )
 
-[node name="Floor13" parent="LevelAssets/Floors" instance=ExtResource( 7 )]
+[node name="Floor13" parent="LevelAssets/Floors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83297, 0.565808, -0.861541 )
 
 [node name="Props" type="Spatial" parent="LevelAssets"]
 
-[node name="StructureFrame" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 3.3071 )
 
-[node name="StructureFrame5" parent="LevelAssets/Props" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 1.23956 )
+[node name="StructureFrame5" parent="LevelAssets/Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0106031, 0.166894, 1.40408 )
 
-[node name="StructureFrame15" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame15" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, -2.38958 )
 
-[node name="StructureFrame13" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame13" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.48778, 0.0718989, -0.0752432 )
 
-[node name="StructureFrame14" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame14" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5139, 0.166894, -0.149058 )
 
-[node name="StructureFrame11" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame11" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89394, 0.166894, 3.3071 )
 
-[node name="StructureFrame8" parent="LevelAssets/Props" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 11.0533 )
+[node name="StructureFrame8" parent="LevelAssets/Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0151169, 0.166894, 11.0533 )
 
-[node name="StructureFrame12" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame12" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89394, 0.166894, 11.0533 )
 
-[node name="StructureFrame19" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame19" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8489, 0.0621224, 16.4485 )
 
-[node name="StructureFrame3" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame3" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 12.3661 )
 
-[node name="StructureFrame2" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame2" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 7.30342 )
 
-[node name="StructureFrame6" parent="LevelAssets/Props" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 7.30342 )
+[node name="StructureFrame6" parent="LevelAssets/Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208038, 0.166894, 7.30342 )
 
-[node name="StructureFrame20" parent="LevelAssets/Props" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076456, 0.166894, 4.0395 )
+[node name="StructureFrame20" parent="LevelAssets/Props" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0129135, 0.166894, 4.0395 )
 
-[node name="StructureFrame10" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame10" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89394, 0.166894, 7.30342 )
 
-[node name="StructureFrame7" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame7" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.51493, 0.0956473, 12.953 )
 
-[node name="StructureFrame16" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame16" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.21267, 0.0956473, 19.9482 )
 
-[node name="StructureFrame18" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame18" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.50811, 0.0956473, 19.9482 )
 
-[node name="StructureFrame9" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame9" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.62365, 0.0956473, 12.953 )
 
-[node name="StructureFrame17" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame17" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3214, 0.0956473, 19.9482 )
 
-[node name="StructureFrame4" parent="LevelAssets/Props" instance=ExtResource( 8 )]
+[node name="StructureFrame4" parent="LevelAssets/Props" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.111, 0.158946, 16.3736 )
 
-[node name="ClosedWindow" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+[node name="ClosedWindow" parent="LevelAssets/Props" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -1.95368e-07, 0, 1, 0, 8.74228e-08, 0, -2.23475, 15.1308, 1.07546, 13.7465 )
 
-[node name="ClosedWindow2" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+[node name="ClosedWindow2" parent="LevelAssets/Props" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.1308, 1.07546, 17.2993 )
 
-[node name="ClosedWindow3" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+[node name="ClosedWindow3" parent="LevelAssets/Props" instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.1308, 1.07546, 19.2643 )
 
-[node name="ClosedWindow4" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+[node name="ClosedWindow4" parent="LevelAssets/Props" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.3614, 1.07546, 21.2119 )
 
-[node name="ClosedWindow5" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+[node name="ClosedWindow5" parent="LevelAssets/Props" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.64024, 1.07546, 21.2119 )
 
-[node name="ClosedWindow6" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+[node name="ClosedWindow6" parent="LevelAssets/Props" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.04724, 1.07546, 21.2119 )
 
-[node name="ClosedWindow7" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+[node name="ClosedWindow7" parent="LevelAssets/Props" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.71705, 1.07546, 21.2119 )
+
+[node name="Canister" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 0.704739 )
+
+[node name="Canister17" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 5.23625 )
+
+[node name="Canister40" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 11.3982 )
+
+[node name="Canister11" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 0.704739 )
+
+[node name="Canister22" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 5.99013 )
+
+[node name="Canister26" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 5.99013 )
+
+[node name="Canister32" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 11.4207 )
+
+[node name="Canister6" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 0.704739 )
+
+[node name="Canister13" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 5.23625 )
+
+[node name="Canister36" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 11.3982 )
+
+[node name="Canister7" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 0.704739 )
+
+[node name="Canister21" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 5.99013 )
+
+[node name="Canister25" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 5.99013 )
+
+[node name="Canister33" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 11.4207 )
+
+[node name="Canister2" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 0.970548 )
+
+[node name="Canister15" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 5.50206 )
+
+[node name="Canister37" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 11.664 )
+
+[node name="Canister9" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 0.970548 )
+
+[node name="Canister19" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 6.25594 )
+
+[node name="Canister24" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 6.25594 )
+
+[node name="Canister30" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85474, 0.2311, 11.6866 )
+
+[node name="Canister5" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 0.970548 )
+
+[node name="Canister16" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 5.50206 )
+
+[node name="Canister39" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 11.664 )
+
+[node name="Canister10" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 0.970548 )
+
+[node name="Canister28" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 6.25594 )
+
+[node name="Canister29" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 6.25594 )
+
+[node name="Canister35" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10409, 0.2311, 11.6866 )
+
+[node name="Canister3" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 1.23128 )
+
+[node name="Canister14" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 5.76279 )
+
+[node name="Canister38" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.903612, 0.2311, 11.9248 )
+
+[node name="Canister8" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85374, 0.2311, 1.2311 )
+
+[node name="Canister20" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85374, 0.2311, 6.51649 )
+
+[node name="Canister31" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.85374, 0.2311, 11.9471 )
+
+[node name="Canister4" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 1.23128 )
+
+[node name="Canister18" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 5.76279 )
+
+[node name="Canister41" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.15297, 0.2311, 11.9248 )
+
+[node name="Canister12" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10309, 0.2311, 1.2311 )
+
+[node name="Canister23" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10309, 0.2311, 6.51649 )
+
+[node name="Canister27" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10309, 0.2311, 6.51649 )
+
+[node name="Canister34" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.10309, 0.2311, 11.9471 )
+
+[node name="BoxContainer" parent="LevelAssets/Props" instance=ExtResource( 10 )]
+transform = Transform( -0.0838041, 0, 0.996482, 0, 1, 0, -0.996482, 0, -0.0838041, 14.1951, 0.69989, 19.6248 )
+
+[node name="BoxContainer2" parent="LevelAssets/Props" instance=ExtResource( 10 )]
+transform = Transform( 0.890583, 0, 0.454822, 0, 1, 0, -0.454822, 0, 0.890583, 14.0783, 0.705927, 20.4291 )
+
+[node name="Canister42" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6462, 0.569119, 19.9398 )
+
+[node name="Canister43" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.421025, -0.427479, -1.86857e-08, 0, -2.62268e-08, 0.6, -0.427479, -0.421025, -1.84036e-08, 14.2852, 1.34966, 19.8113 )
+
+[node name="Canister44" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 0.421023, 0, -0.42748, 0, 0.6, 0, 0.42748, 0, 0.421023, 14.3198, 1.22641, 19.4687 )
+
+[node name="BoxContainer3" parent="LevelAssets/Props" instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0833491, 0.675701, -3.05375 )
+
+[node name="Canister45" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.888835, 0.21652, -2.60956 )
+
+[node name="Canister48" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08003, 0.21652, -2.60956 )
+
+[node name="Canister46" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.888835, 0.21652, -3.03786 )
+
+[node name="Canister47" parent="LevelAssets/Props" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08003, 0.21652, -3.03786 )
 
 [node name="Pipes" type="Spatial" parent="LevelAssets"]
 editor/display_folded = true
 
-[node name="StraightPipe" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.565, 1.33085, 0.588839, 4.0749 )
 
-[node name="StraightPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.79997, -0.00694661, 0, 0.00694661, 0.79997, 0, 0, 0, 0.585, 5.78824, 0.588839, 4.19479 )
 
-[node name="StraightPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( -3.49678e-08, 3.03939e-10, 0.293, 0.0069533, 0.79997, -4.60323e-18, -0.79997, 0.0069533, -1.28074e-08, 3.83526, 0.578224, 1.09766 )
 
-[node name="StraightPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1.567, 1.33085, 0.588839, 7.32106 )
 
-[node name="StraightPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.79997, -0.00694661, 0, 0.00694661, 0.79997, 0, 0, 0, 1.567, 5.78824, 0.588839, 7.33167 )
 
-[node name="StraightPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 1.207, 1.33085, 0.588839, 9.85458 )
 
-[node name="StraightPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.79997, -0.00694661, 0, 0.00694661, 0.79997, 0, 0, 0, 1.207, 5.78824, 0.588839, 9.86519 )
 
-[node name="StraightPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( -3.49691e-08, 0, 0.292, 0, 0.8, 0, -0.8, 0, -1.27637e-08, 3.86535, 0.605557, 11.8198 )
 
-[node name="CurvedPipe" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( -0.8, 0, 1.20797e-07, 0, 0.8, 0, -1.20797e-07, 0, -0.8, 1.51456, 0.57289, 11.6239 )
 
-[node name="CurvedPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe2" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( -3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 5.65363, 0.57289, 11.6239 )
 
-[node name="CurvedPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe3" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.59733, 0.558755, 1.2503 )
 
-[node name="CurvedPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe4" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( -3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 1.47956, 0.568268, 1.25071 )
 
-[node name="StraightPipe9" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe9" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.285155, 0.0932029, 0, -0.0932029, 0.285155, 0, 0, 0, 0.3, -4.45335, 2.20392, 3.34612 )
 
-[node name="StraightPipe11" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe11" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( -0.284997, -0.0931513, -0.00998619, -0.0932029, 0.285155, 0, 0.00949204, 0.00310248, -0.299834, -5.56203, 2.17642, 16.53 )
 
-[node name="StraightPipe10" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe10" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( 0.285155, 0.0932029, 0, -0.0932029, 0.285155, 0, 0, 0, 0.3, -5.52368, 2.20392, 3.34612 )
 
-[node name="StraightPipe12" parent="LevelAssets/Pipes" instance=ExtResource( 10 )]
+[node name="StraightPipe12" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
 transform = Transform( -0.284997, -0.0931513, -0.00998619, -0.0932029, 0.285155, 0, 0.00949204, 0.00310248, -0.299834, -4.4923, 2.17642, 16.4944 )
 
-[node name="CurvedPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe5" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0, 0.3, -4.47032, 2.28752, 2.08003 )
 
-[node name="CurvedPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe7" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( 1.31062e-08, -0.299834, -0.00998619, -0.3, -1.31134e-08, 0, -4.3651e-10, 0.00998619, -0.299834, -5.50294, 2.26002, 17.7948 )
 
-[node name="CurvedPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe6" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0, 0.3, -5.54065, 2.28752, 2.08003 )
 
-[node name="CurvedPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 11 )]
+[node name="CurvedPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 12 )]
 transform = Transform( 1.31062e-08, -0.299834, -0.00998619, -0.3, -1.31134e-08, 0, -4.3651e-10, 0.00998619, -0.299834, -4.43483, 2.26146, 17.7592 )
 
-[node name="Player" parent="." instance=ExtResource( 12 )]
+[node name="Player" parent="." instance=ExtResource( 13 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.55974, 0 )
 walk_speed = 3
 running_speed = 6
+
+[node name="Lighting" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource( 2 )
+
+[node name="CeilingLight" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, -0.188472 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight10" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 3.70905 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight10"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight14" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 3.70905 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight14"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight3" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, 3.89844 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight3"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight13" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 8.78652 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight13"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight18" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 8.78652 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight18"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight23" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.7913, 3.22652, 22.4916 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight23"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight4" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, 8.18497 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight4"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight12" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 13.0731 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight12"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight16" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 13.0731 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight16"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight22" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.7913, 3.22652, 26.7782 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight22"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight5" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.157377, 3.2409, 13.2581 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight5"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight9" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51233, 3.2409, 18.1461 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight9"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight17" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.289, 3.2409, 19.4051 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight17"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight6" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.155971, 3.23953, 19.3968 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight6"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight11" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51374, 3.23953, 24.2848 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight11"]
+transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight2" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.126432, 3.22652, -0.20892 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight2"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight19" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 10.2409, 3.22652, 19.434 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight19"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight21" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 10.2409, 3.22652, 29.9711 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight21"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight8" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -4.00512, 3.22652, -0.20892 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight8"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight20" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.0918356, 3.22652, 19.434 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight20"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight24" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.0918356, 3.22652, 29.9711 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight24"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight7" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 5.41002, 3.22652, -0.20892 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight7"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight15" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 19.0701, 3.22652, 19.434 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight15"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="CeilingLight25" parent="Lighting" instance=ExtResource( 14 )]
+transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 19.0701, 3.22652, 29.9711 )
+
+[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight25"]
+transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
+shadow_enabled = true
+spot_attenuation = 0.965938
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34137, 0.993528, 9.53055 )
+extents = Vector3( 3.69442, 0.240881, 8.43303 )
+box_projection = true
+enable_shadows = true
+interior_ambient_color = Color( 1, 1, 1, 1 )
+interior_ambient_energy = 0.35
