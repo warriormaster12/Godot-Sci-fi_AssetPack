@@ -37,6 +37,7 @@ fog_height_curve = 0.450624
 tonemap_mode = 2
 glow_enabled = true
 glow_intensity = 3.0
+glow_strength = 0.74
 adjustment_enabled = true
 adjustment_brightness = 1.06
 adjustment_contrast = 1.29
@@ -606,7 +607,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 22.0104 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 23.1617 )
 
 [node name="Pipes" type="Spatial" parent="LevelAssets"]
-editor/display_folded = true
+transform = Transform( 0.99956, 0, -0.0296662, 0, 1, 0, 0.0296662, 0, 0.99956, 0, 0, 0 )
 
 [node name="StraightPipe" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.565, 1.33085, 0.588839, 4.0749 )
@@ -667,6 +668,60 @@ transform = Transform( -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0, 0.3, -
 
 [node name="CurvedPipe8" parent="LevelAssets/Pipes" instance=ExtResource( 15 )]
 transform = Transform( 1.31062e-08, -0.299834, -0.00998619, -0.3, -1.31134e-08, 0, -4.3651e-10, 0.00998619, -0.299834, -4.43483, 2.26146, 17.7592 )
+
+[node name="StraightPipe13" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.00538956, 0, -0.999942, 0, 0.5, 0, 0.499971, 0, 0.0107791, -0.822679, 0.481167, 18.7331 )
+
+[node name="StraightPipe18" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.00538956, 0, -0.999943, 0, 0.5, 0, 0.499971, 0, 0.0107791, 1.13624, 0.486483, 18.7076 )
+
+[node name="StraightPipe20" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 3.11521, 0.486483, 18.6872 )
+
+[node name="StraightPipe23" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 4.85881, 0.486483, 18.6031 )
+
+[node name="StraightPipe26" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 6.61906, 0.486483, 18.5131 )
+
+[node name="StraightPipe28" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.031487, 0, -1.26713, 0, 0.5, 0, 0.499133, 0, 0.0533042, 8.37469, 0.49193, 18.4364 )
+
+[node name="StraightPipe14" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.00538956, 0, -0.999942, 0, 0.5, 0, 0.499971, 0, 0.0107791, -0.822679, 0.656962, 18.7331 )
+
+[node name="StraightPipe16" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.00538956, 0, -0.999943, 0, 0.5, 0, 0.499971, 0, 0.0107791, 1.13624, 0.662277, 18.7076 )
+
+[node name="StraightPipe21" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 3.11521, 0.662277, 18.6872 )
+
+[node name="StraightPipe24" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 4.85881, 0.662277, 18.6031 )
+
+[node name="StraightPipe25" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 6.61906, 0.662277, 18.5131 )
+
+[node name="StraightPipe29" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.031487, 0, -1.26713, 0, 0.5, 0, 0.499133, 0, 0.0533042, 8.37469, 0.667724, 18.4364 )
+
+[node name="StraightPipe15" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.00538956, 0, -0.999942, 0, 0.5, 0, 0.499971, 0, 0.0107791, -0.822679, 0.821555, 18.7331 )
+
+[node name="StraightPipe17" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.00538956, 0, -0.999943, 0, 0.5, 0, 0.499971, 0, 0.0107791, 1.13624, 0.82687, 18.7076 )
+
+[node name="StraightPipe19" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 3.11521, 0.82687, 18.6872 )
+
+[node name="StraightPipe22" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 4.85881, 0.82687, 18.6031 )
+
+[node name="StraightPipe27" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.0416354, 6.61906, 0.82687, 18.5131 )
+
+[node name="StraightPipe30" parent="LevelAssets/Pipes" instance=ExtResource( 14 )]
+transform = Transform( 0.031487, 0, -1.26713, 0, 0.5, 0, 0.499133, 0, 0.0533042, 8.37469, 0.832317, 18.4364 )
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.55974, 0 )
