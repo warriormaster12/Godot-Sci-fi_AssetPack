@@ -582,7 +582,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.888835, 0.21652, -3.03786 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08003, 0.21652, -3.03786 )
 
 [node name="DoorFrame" parent="LevelAssets/Props" instance=ExtResource( 12 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14629, 0.343716, 23.3427 )
 
 [node name="Door" parent="LevelAssets/Props/DoorFrame" instance=ExtResource( 13 )]
