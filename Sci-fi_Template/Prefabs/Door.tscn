@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Prefabs/Door.gd" type="Script" id=1]
+[ext_resource path="res://Prefabs/Platform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/DoorFrame.dae" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Props/Door.dae" type="PackedScene" id=3]
 
@@ -9,6 +9,7 @@ extents = Vector3( 1.422, 1, 0.496848 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
+Object_to_move = NodePath("DoorFrame/Door")
 Position = NodePath("DoorFrame/Position3D")
 
 [node name="DoorFrame" parent="." instance=ExtResource( 2 )]
