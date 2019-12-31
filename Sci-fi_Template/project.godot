@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [display]
 
 window/size/fullscreen=true
+window/vsync/use_vsync=false
 
 [input]
 
