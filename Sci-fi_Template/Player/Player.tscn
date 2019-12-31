@@ -14,7 +14,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0
 shape = SubResource( 1 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646983, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 fov = 90.0

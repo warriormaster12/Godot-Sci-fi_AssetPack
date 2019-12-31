@@ -15,10 +15,11 @@ var direction = Vector3()
 
 
 #Walk variables 
-export var walk_speed = 7
-export var running_speed = 10
+export (float) var crouch_speed = 3
+export (float) var walk_speed = 7
+export (float) var running_speed = 10
 var gravity = -9.8 * 3
-var speed = 0
+var speed = 0.0
 const ACCEL = 10 
 const DEACCEL = 10
 
@@ -84,6 +85,15 @@ func GroundMovement(delta):
 		speed = running_speed
 	else: 
 		speed = walk_speed
+#	if Input.is_action_pressed("Crouch"):
+#		speed = crouch_speed
+#		$CollisionShape.set("shape/height",0.4)
+#		$Head.transform.basis.y = Vector3(0,0.45,0)
+#	else: 
+#		speed = walk_speed
+#		$Head.transform.basis.y = Vector3(0,0.45,0)
+#		$CollisionShape.set("shape/height",0.8)
+#
 	if Input.is_action_pressed("Jump") and is_on_floor(): 
 		if Number_of_jumps != Max_Jumps:
 			velocity.y = Jump_Height

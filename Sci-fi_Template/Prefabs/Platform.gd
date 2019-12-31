@@ -6,6 +6,7 @@ export(NodePath) var Object_to_move
 export (NodePath) var Position
 export (float) var speed = 1
 export (bool) var is_door = true
+export (bool) var is_locked = false
 
 onready var Object_inst = get_node(Object_to_move)
 onready var original_position = get_node(Object_to_move).translation
@@ -19,7 +20,7 @@ func _ready():
 #	pass
 func _physics_process(delta):
 	if is_door == true:	
-		if has_entered == true:
+		if has_entered == true && is_locked == false:
 			Object_inst.translation = Object_inst.translation.linear_interpolate(pos_inst, speed * delta)
 		else: 
 			Object_inst.translation = Object_inst.translation.linear_interpolate(original_position, speed * delta)
