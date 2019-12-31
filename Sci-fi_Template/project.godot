@@ -19,6 +19,10 @@ config/name="Sci-fi_Template"
 run/main_scene="res://OverviewLevels/HallwayLevel.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 Exit={
