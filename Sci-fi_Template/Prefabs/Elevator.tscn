@@ -4,19 +4,21 @@
 [ext_resource path="res://Assets/Props/Elevator.dae" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 1, 1, 0.679632 )
+extents = Vector3( 1, 1, 0.356492 )
 
 [node name="Elevator" type="Spatial"]
 script = ExtResource( 1 )
-Object_to_move = NodePath("Elevator")
+Object_to_move = NodePath("KinematicBody")
 is_door = false
 
-[node name="Elevator" parent="." instance=ExtResource( 2 )]
+[node name="KinematicBody" type="KinematicBody" parent="."]
 
-[node name="Area" type="Area" parent="."]
+[node name="Elevator" parent="KinematicBody" instance=ExtResource( 2 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99484, 0.0903484 )
+[node name="Area" type="Area" parent="KinematicBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02042, 0.0903484 )
 shape = SubResource( 1 )
-[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+[connection signal="body_entered" from="KinematicBody/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="KinematicBody/Area" to="." method="_on_Area_body_exited"]

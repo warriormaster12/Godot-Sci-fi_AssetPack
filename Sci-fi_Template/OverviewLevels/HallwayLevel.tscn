@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Hallways/X-Hallway.dae" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Hallways/Hallway.dae" type="PackedScene" id=2]
@@ -46,13 +46,23 @@ adjustment_brightness = 1.06
 adjustment_contrast = 1.29
 adjustment_saturation = 1.2
 
+[sub_resource type="GIProbeData" id=3]
+bounds = AABB( -33.4654, -18.7548, -28.8559, 66.9308, 37.5095, 57.7118 )
+cell_size = 0.522897
+to_cell_xform = Transform( 1.91242, 0, 0, 0, 1.91242, 0, 0, 0, 1.91242, 64, 35.8671, 55.1847 )
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 2, 10, 0, 0, 8, 0, 331495472, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+energy = 0.4
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
+
 [node name="HallwayLevel" type="Spatial"]
 
 [node name="LevelAssets" type="Spatial" parent="."]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 
 [node name="Hallways" type="Spatial" parent="LevelAssets"]
-editor/display_folded = true
 
 [node name="X-Hallway" parent="LevelAssets/Hallways" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.119274 )
@@ -122,6 +132,12 @@ transform = Transform( -4.37114e-08, 0, -5, 0, 1, 0, 1, 0, -2.18557e-07, 8.25773
 
 [node name="ElevatorHallway" parent="LevelAssets/Hallways" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10405, 0.164548, 23.4557 )
+
+[node name="ElevatorHallway2" parent="LevelAssets/Hallways" instance=ExtResource( 7 )]
+transform = Transform( -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -5.01624, 21.393, 23.4557 )
+
+[node name="Hallway10" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 6.337, 0, -1, -2.76999e-07, -5.0591, 4.45544, 27.7435 )
 
 [node name="Floors" type="Spatial" parent="LevelAssets"]
 editor/display_folded = true
@@ -614,10 +630,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13926, 0.312637, 23.1617 )
 [node name="Elevator" parent="LevelAssets/Props" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13512, 0.343327, 26.6038 )
 Position = NodePath("Position3D")
-speed = 0.5
+speed = 0.1
 
 [node name="Position3D" type="Position3D" parent="LevelAssets/Props/Elevator"]
-transform = Transform( 1, 0, 0, 0, 0.999993, -0.00368916, 0, 0.00368916, 0.999993, 0, 20, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999993, -0.00368916, 0, 0.00368916, 0.999993, 0, 18.759, 0 )
 
 [node name="Pipes" type="Spatial" parent="LevelAssets"]
 editor/display_folded = true
@@ -751,210 +767,80 @@ environment = SubResource( 2 )
 [node name="CeilingLight" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, -0.188472 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight10" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 3.70905 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight10"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight14" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 3.70905 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight14"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight3" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, 3.89844 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight3"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight13" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 8.78652 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight13"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight18" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 8.78652 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight18"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight23" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.7913, 3.22652, 22.4916 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight23"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight4" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.149116, 3.22652, 8.18497 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight4"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight12" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.5206, 3.22652, 13.0731 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight12"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight16" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.2807, 3.22652, 13.0731 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight16"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight22" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.7913, 3.22652, 26.7782 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight22"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight5" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.157377, 3.2409, 13.2581 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight5"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight9" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51233, 3.2409, 18.1461 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight9"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight17" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.289, 3.2409, 19.4051 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight17"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight6" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.155971, 3.23953, 19.3968 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight6"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight11" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51374, 3.23953, 24.2848 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight11"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight26" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.51374, 3.23953, 32.9765 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight26"]
-transform = Transform( 0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight2" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.126432, 3.22652, -0.20892 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight2"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight19" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 10.2409, 3.22652, 19.434 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight19"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight21" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 10.2409, 3.22652, 29.9711 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight21"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight8" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -4.00512, 3.22652, -0.20892 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight8"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight20" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.0918356, 3.22652, 19.434 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight20"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight24" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0.0918356, 3.22652, 29.9711 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight24"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight7" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 5.41002, 3.22652, -0.20892 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight7"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="CeilingLight15" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 19.0701, 3.22652, 19.434 )
 
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight15"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
-
 [node name="CeilingLight25" parent="Lighting" instance=ExtResource( 20 )]
 transform = Transform( -6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 19.0701, 3.22652, 29.9711 )
-
-[node name="SpotLight" type="SpotLight" parent="Lighting/CeilingLight25"]
-transform = Transform( 0.666667, -1.77636e-15, -1.05879e-22, 0, -2.91409e-08, 0.666667, -1.77636e-15, -0.666667, -2.91409e-08, 0, -0.252068, 0 )
-shadow_enabled = true
-spot_attenuation = 0.965938
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34137, 0.993528, 9.53055 )
@@ -963,3 +849,9 @@ box_projection = true
 enable_shadows = true
 interior_ambient_color = Color( 1, 1, 1, 1 )
 interior_ambient_energy = 0.35
+
+[node name="GIProbe" type="GIProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19578, 16.5273, 19.1716 )
+extents = Vector3( 33.4654, 18.7548, 28.8559 )
+energy = 0.4
+data = SubResource( 3 )
