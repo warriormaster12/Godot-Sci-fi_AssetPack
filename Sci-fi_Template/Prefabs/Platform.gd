@@ -9,8 +9,8 @@ export (bool) var is_door = true
 export (bool) var is_locked = false
 
 onready var Object_inst = get_node(Object_to_move)
-onready var original_position = get_node(Object_to_move).translation
-onready var pos_inst = get_node(Position).translation
+onready var original_position = get_node(Object_to_move)
+onready var pos_inst = get_node(Position)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -21,14 +21,15 @@ func _ready():
 func _physics_process(delta):
 	if is_door == true:	
 		if has_entered == true && is_locked == false:
-			Object_inst.translation = Object_inst.translation.linear_interpolate(pos_inst, speed * delta)
+			Object_inst.translation = Object_inst.translation.linear_interpolate(pos_inst.translation, speed * delta)
 		else: 
-			Object_inst.translation = Object_inst.translation.linear_interpolate(original_position, speed * delta)
+			Object_inst.translation = Object_inst.translation.linear_interpolate(original_position.translation, speed * delta)
 	else: 
 		if has_entered == true:
-			
-			Object_inst.translation = Object_inst.translation.linear_interpolate(pos_inst, speed * delta)
-
+			if Object_inst.get_transform() == original_position.get_transform():
+				Object_inst.translation = Object_inst.translation.linear_interpolate(pos_inst.translation, speed*delta)
+			else: 
+				Object_inst.translation = Object_inst.translation.linear_interpolate(original_position.translation, speed*delta)
 func _on_Area_body_entered(body):
 	if body.name == "Player":
 		has_entered = true
