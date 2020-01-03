@@ -124,7 +124,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.2989
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.54956, 0.0844658, -0.0996116 )
 
 [node name="Hallway11" parent="LevelAssets/Hallways" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.5, -5.11133, 0.0564522, 3.43872 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6.5, -5.11133, 0.0833544, 3.53027 )
 
 [node name="T-Hallway3" parent="LevelAssets/Hallways" instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -1.56432e-07, 0, 1, 0, 1.50996e-07, 0, -1.036, -5.07204, 0.153637, 19.949 )
@@ -364,7 +364,6 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5385
 transform = Transform( 0.7, 0, 0, 0, 0.65, 0, 0, 0, 0.6, -5.02901, 0.571483, 23.4086 )
 
 [node name="Props" type="Spatial" parent="LevelAssets"]
-editor/display_folded = true
 
 [node name="StructureFrame" parent="LevelAssets/Props" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11123, 0.166894, 3.3071 )
@@ -630,12 +629,12 @@ transform = Transform( 0.997446, 0, -0.0714275, 0, 1, 0, 0.0714275, 0, 0.997446,
 transform = Transform( 0.986524, 0, 0.163617, 0, 1, 0, -0.163617, 0, 0.986524, -6.00402, 0.314329, 23.1622 )
 
 [node name="Elevator" parent="LevelAssets/Props" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13512, 0.343327, 26.6038 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13087, 19.0039, 26.605 )
 Position = NodePath("Position3D")
 speed = 0.1
 
 [node name="Position3D" type="Position3D" parent="LevelAssets/Props/Elevator"]
-transform = Transform( 1, 0, 0, 0, 0.999993, -0.00368916, 0, 0.00368916, 0.999993, 0, 18.8646, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999993, -0.00368916, 0, 0.00368916, 0.999993, 0, -18.4452, 0 )
 
 [node name="Spatial" parent="LevelAssets/Props" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10821, 19.2538, 23.515 )
@@ -760,7 +759,7 @@ transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.041635
 transform = Transform( 0.031487, 0, -1.26713, 0, 0.5, 0, 0.499133, 0, 0.0533042, 8.3747, 0.832317, 18.4364 )
 
 [node name="Player" parent="." instance=ExtResource( 19 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.55974, 0 )
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.78378, 29.618, 40.0093 )
 crouch_speed = 1.5
 walk_speed = 2.0
 running_speed = 5.0

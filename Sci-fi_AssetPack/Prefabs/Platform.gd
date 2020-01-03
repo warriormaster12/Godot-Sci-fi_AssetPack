@@ -25,7 +25,7 @@ func _physics_process(delta):
 		else: 
 			Object_inst.translation = Object_inst.translation.linear_interpolate(original_position.translation, speed * delta)
 	else: 
-		if has_entered == true:
+		if has_entered == true && is_locked == false:
 			if Object_inst.get_transform() == original_position.get_transform():
 				Object_inst.translation = Object_inst.translation.linear_interpolate(pos_inst.translation, speed*delta)
 			else: 
