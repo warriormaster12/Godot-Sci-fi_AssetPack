@@ -9,6 +9,27 @@
 ## About Godot-Sci-fi_AssetPack? 
 This is a free & open-source Sci-fi asset pack for Godot engine. The main idea of this project is to give new users a starting point to develop levels in Godot using assets that can be easily optained and are pleasant to look at.
 
+### What is currently included in the pack?
+```
+2x straight hallway
+1x corner hallway
+1x t-hallway
+1x x-hallway(should have been called +-hallway)
+1x explosive canister 
+1x box container
+1x console panel
+1x floor
+1x floor ramp
+1x hallway structure
+1x deadend hallway
+1x door
+1x console panel
+1x elevator
+1x elevator hallway
+1x ceiling light
+1x straight pipe
+1x corner pipe
+```
 ### How to run the demo template? 
 [first Download Godot engine](https://godotengine.org/)
 ```
