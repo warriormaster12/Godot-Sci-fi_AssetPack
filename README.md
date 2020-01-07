@@ -1,6 +1,6 @@
 # Godot-Sci-fi_AssetPack
 ## Showcase video
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/33091666/71739005-eb70d580-2e60-11ea-9501-04968e77a2f3.png)]( https://youtu.be/m0ZybNFHpxA)
+[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/33091666/71739005-eb70d580-2e60-11ea-9501-04968e77a2f3.png)](https://youtu.be/JEgEhb4MjE8 )
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/33091666/71625318-cd506e80-2bef-11ea-839b-d5b437f94576.png)
