@@ -7,7 +7,7 @@
 ![image](https://user-images.githubusercontent.com/33091666/71625313-c9bce780-2bef-11ea-8fba-a6b56cbb688f.png)
 
 ## About Godot-Sci-fi_AssetPack? 
-This is a free & open-source Sci-fi asset pack for Godot engine. The main idea of this project is to give new users a starting point to develop levels in Godot using assets that can be easily optained and are pleasant to look at.
+This is a free & open-source Sci-fi asset pack for Godot engine. The main idea of this project is to give new users a starting point to develop levels in Godot using assets that can be easily obtained and are pleasant to look at.
 
 ### What is currently included in the pack?
 ```
