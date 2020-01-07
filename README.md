@@ -23,6 +23,7 @@ This is a free & open-source Sci-fi asset pack for Godot engine. The main idea o
 1x hallway structure
 1x deadend hallway
 1x door
+1x door frame
 1x console panel
 1x elevator
 1x elevator hallway
