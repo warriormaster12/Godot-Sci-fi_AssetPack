@@ -759,7 +759,7 @@ transform = Transform( 0.0263202, 0, -0.873964, 0, 0.5, 0, 0.499286, 0, 0.041635
 transform = Transform( 0.031487, 0, -1.26713, 0, 0.5, 0, 0.499133, 0, 0.0533042, 8.3747, 0.832317, 18.4364 )
 
 [node name="Player" parent="." instance=ExtResource( 19 )]
-transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.78378, 29.618, 40.0093 )
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.83046, 0 )
 crouch_speed = 1.5
 walk_speed = 2.0
 running_speed = 5.0
