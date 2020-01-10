@@ -42,5 +42,11 @@ This is a free & open-source Sci-fi asset pack for Godot engine. The main idea o
 ### Can I get only source files without the project? 
 Yes and you can download them from [releases tab](https://github.com/warriormaster12/Godot-Sci-fi_AssetPack/releases)
 
+### Trello 
+You can follow public trello to stay up to date on what is coming to the asset pack. 
+![image](https://user-images.githubusercontent.com/33091666/72147184-a8ee5200-33a6-11ea-9e44-b703f57c423e.png)
+[Trello](https://trello.com/b/tw8yAwGb/godot-sci-fiassetpack)
+
+
 ### Can I contribute to the project? 
 Yes, you can do pull requests, suggest improvements to existing assets or suggest assets that should be created to make the asset pack even better.  
